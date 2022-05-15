@@ -9,13 +9,20 @@ import {
 import './App.css'
 import Coucou from "./pages/Coucou";
 
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <h1>Coucou</h1>
-    </div>
+    <Router>
+      <Routes>
+  <Route path="/" element={<>
+    <p>coucou</p>
+    <Link to='/login'>Go to coucou</Link>
+  </>}  />
+  <Route path="/login" element={<Coucou />} />
+      </Routes>
+    </Router>
   )
 }
 
